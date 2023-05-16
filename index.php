@@ -17,10 +17,10 @@ require_once __DIR__ . '/db.php';
 <body>
     <div class="container">
         <h1 class="text-center">Lista Film</h1>
-        <div class="row ">
+        <div class="row row-cols-3">
             <?php foreach ($list_of_movies as $movie) {
             ?>
-                <div class="col d-flex justify-content-center align-items-center">
+                <div class="col">
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -28,9 +28,7 @@ require_once __DIR__ . '/db.php';
                             <p class="card-text">
                             <h4>Genere</h4> <?php echo ($movie->printGenere()) ?>
                             </p>
-                            <p class="card-text">
-                                <?php echo ($movie->printYear()) ?>
-                            </p>
+
                         </div>
                     </div>
                 <?php } ?>
