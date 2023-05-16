@@ -1,8 +1,7 @@
 <?php
 require_once __DIR__ . '/generes.php';
 require_once __DIR__ . '/movie.php';
-$vita_bella = new Movie('La vita è bella', new Generes(['Commedia', 'Dramma']), '1997');
-$western = new Movie('Il buono, il brutto e il cattivo', ['Western'], '1966');
+$vita_bella = new Movie('La vita è bella', ['Commedia', 'Dramma'], '1997');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +17,8 @@ $western = new Movie('Il buono, il brutto e il cattivo', ['Western'], '1966');
     <h1>Lista Film</h1>
     <ul>
         <li><?php var_dump($vita_bella) ?></li>
+        <li><?php var_dump($vita_bella) ?></li>
+        <?php echo ($vita_bella->printGenere()) ?>
     </ul>
 </body>
 

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/generes.php';
+
 class Movie
 {
     public $title;
@@ -15,12 +15,12 @@ class Movie
     {
         return "Titolo: {$this->title}";
     }
-    public function printGenere()
-    {
-        return implode(', ', $this->genere);
-    }
     public function printYear()
     {
         return "Anno: {$this->year}";
+    }
+    public function printGenere()
+    {
+        return implode(', ', $this->genere);
     }
 }
