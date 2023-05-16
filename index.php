@@ -1,14 +1,8 @@
 <?php
-class Movie
-{
-    public $title;
-    public $genere;
-    function __construct($_title)
-    {
-        $this->title = $_title;
-    }
-}
-$vita_bella = new Movie('La vita è bella', 'Commedia');
+require_once __DIR__ . '/generes.php';
+require_once __DIR__ . '/movie.php';
+$vita_bella = new Movie('La vita è bella', new Generes(['Commedia', 'Dramma']), '1997');
+$western = new Movie('Il buono, il brutto e il cattivo', ['Western'], '1966');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +16,9 @@ $vita_bella = new Movie('La vita è bella', 'Commedia');
 
 <body>
     <h1>Lista Film</h1>
-    <p>
-        <?php ?>
-    </p>
+    <ul>
+        <li><?php var_dump($vita_bella) ?></li>
+    </ul>
 </body>
 
 </html>
