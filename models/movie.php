@@ -13,11 +13,11 @@ class Movie
     }
     public function printTitle()
     {
-        return "Titolo: {$this->title}";
+        return "{$this->title}";
     }
     public function printYear()
     {
-        return "Anno: {$this->year}";
+        return "{$this->year}";
     }
     public function printGenere()
     {

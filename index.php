@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/generes.php';
-require_once __DIR__ . '/movie.php';
-$vita_bella = new Movie('La vita è bella', ['Commedia', 'Dramma'], '1997');
+require_once __DIR__ . '/models/movie.php';
+require_once __DIR__ . '/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +15,10 @@ $vita_bella = new Movie('La vita è bella', ['Commedia', 'Dramma'], '1997');
 <body>
     <h1>Lista Film</h1>
     <ul>
-        <li><?php var_dump($vita_bella) ?></li>
-        <li><?php var_dump($vita_bella) ?></li>
-        <?php echo ($vita_bella->printGenere()) ?>
+        <?php foreach ($list_of_movies as $movie) {
+        ?>
+            <li><?php echo ($movie->printTitle()) ?>. Genere: <?php echo ($movie->printGenere()) ?>. Anno d'uscita: <?php echo ($movie->printYear()) ?></li>
+        <?php } ?>
     </ul>
 </body>
 
